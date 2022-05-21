@@ -1,0 +1,5 @@
+.AppContatos/bin/*
+.AppContatos/obj/*
+.AppContatos/*.sln
+AppContatos/.vs
+*.cache

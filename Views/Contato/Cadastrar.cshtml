@@ -1,0 +1,60 @@
+﻿@model ContatoModel 
+
+@{
+    ViewData["Title"] = "Cadastro Contato";
+}
+
+<form class="row g-3" id="frmCadastroContato" role="form" method="post">
+    
+     <div class="col-md-12 text-center">
+        <h2>Cadastro Contato</h2>
+    </div> 
+    <div class="col-md-12">
+        <label for="nome" class="form-label">Nome *</label>
+        <input type="hidden" value="@Model.Id" class="form-control" id="id">
+        <input type="text" value="@Model.Name" class="form-control" id="nome" >
+    </div>
+    
+    <div class="col-md-12">
+        <label for="empresa" class="form-label">Empresa</label>
+        <input type="text" value="@Model.Empresa" class="form-control" id="empresa">
+    </div>  
+    <div class="col-6">
+        <label for="telefonePessoal" class="form-label">Telefone Pessoal</label>
+        <input type="text" value="@Model.TelefonePessoal" class="form-control" id="TelefonePessoal" >
+    </div>
+    <div class="col-md-6">
+        <label for="telefoneComecial" class="form-label">Telefone Comercial</label>
+        <input type="text" value="@Model.TelefoneComercial" class="form-control" id="TelefoneComercial">
+    </div>   
+         
+
+    @Html.Partial("_ListaEmail")
+    
+   
+    <div class="container col d-inline-flex mt-5 justify-content-center border-top pt-3 border-bottom pb-3">
+        <div class="row-md-1">
+            <button type="submit" onclick="CadastrarContato()" class="btn btn-success">Gravar</button>
+        </div>   
+        
+        <div class="row-md-1 ml-2">
+            <button type="button" class="btn btn-primary" onclick="LimparCampos()">Cancelar</button>
+        </div>
+        <div class="row-md-1 ml-2">
+            <a class="btn btn-warning" role="button" asp-area="" asp-controller="Contato" asp-action="Index">Voltar</a>
+        </div>
+        
+               
+    </div>  
+    
+     <script>
+        window.onload = function() {
+            if ($("#nome").val().trim() != '' ){
+                PopularTabelaEmail($("#id").val());
+            }
+
+            
+        }
+    </script>
+    
+</form>
