@@ -16,3 +16,6 @@ obj/Debug/net5.0/AppContato.Views.dll
 obj/Debug/net5.0/AppContato.Views.pdb
 obj/project.assets.json
 obj/project.nuget.cache
+*.dll
+*.cache
+*.pdb
